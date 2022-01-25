@@ -8,8 +8,8 @@ public class CMYKtoRGB {
         double red = 255 * white * (1 - cyan);
         double green = 255 * white * (1 - magenta);
         double blue = 255 * white * (1 - yellow);
-        System.out.println("red = " + (int) red);
-        System.out.println("green = " + (int) green);
-        System.out.println("blue = " + (int) blue);
+        StdOut.println("red = " + (int) Math.round(red));
+        StdOut.println("green = " + (int) Math.round(green));
+        StdOut.println("blue = " + (int) Math.round(blue));
     }
 }
