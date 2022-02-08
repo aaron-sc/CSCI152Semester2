@@ -34,12 +34,13 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../Assignment 2/src/BandMatrix.java" />
     <property name="project.structure.last.edited" value="Libraries" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Application.ThueMorse">
     <configuration name="&lt;template&gt;" type="TestNG" default="true" selected="false">
       <option name="VM_PARAMETERS" value="-ea" />
       <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
@@ -47,7 +48,15 @@
     <configuration name="DiscreteDistribution" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="DiscreteDistribution" />
       <module name="arrays" />
-      <option name="PROGRAM_PARAMETERS" value="25 10 10 10 10 10 50" />
+      <option name="PROGRAM_PARAMETERS" value="10 80 20" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ThueMorse" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="ThueMorse" />
+      <module name="arrays" />
+      <option name="PROGRAM_PARAMETERS" value="12 3" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -65,8 +74,13 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <list>
+      <item itemvalue="Application.DiscreteDistribution" />
+      <item itemvalue="Application.ThueMorse" />
+    </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.ThueMorse" />
         <item itemvalue="Application.DiscreteDistribution" />
       </list>
     </recent_temporary>
