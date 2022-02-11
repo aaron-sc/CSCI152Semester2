@@ -40,18 +40,10 @@
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
-  <component name="RunManager" selected="Application.Minesweeper">
+  <component name="RunManager" selected="Application.ThueMorse">
     <configuration name="&lt;template&gt;" type="TestNG" default="true" selected="false">
       <option name="VM_PARAMETERS" value="-ea" />
       <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
-    </configuration>
-    <configuration name="Birthday" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Birthday" />
-      <module name="arrays" />
-      <option name="PROGRAM_PARAMETERS" value="31 100" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
     </configuration>
     <configuration name="DiscreteDistribution" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="DiscreteDistribution" />
@@ -61,6 +53,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+<<<<<<< HEAD
     <configuration name="Minesweeper" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Minesweeper" />
       <module name="arrays" />
@@ -69,10 +62,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+=======
+>>>>>>> parent of 2d1af00 (Bday not done :| attempt at mine)
     <configuration name="ThueMorse" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="ThueMorse" />
       <module name="arrays" />
-      <option name="PROGRAM_PARAMETERS" value="16" />
+      <option name="PROGRAM_PARAMETERS" value="12 3" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -93,13 +88,9 @@
     <list>
       <item itemvalue="Application.DiscreteDistribution" />
       <item itemvalue="Application.ThueMorse" />
-      <item itemvalue="Application.Birthday" />
-      <item itemvalue="Application.Minesweeper" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.Minesweeper" />
-        <item itemvalue="Application.Birthday" />
         <item itemvalue="Application.ThueMorse" />
         <item itemvalue="Application.DiscreteDistribution" />
       </list>
