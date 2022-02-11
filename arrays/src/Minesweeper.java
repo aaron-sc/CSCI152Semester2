@@ -36,19 +36,16 @@ public class Minesweeper {
         }
 
 
-        for (int i = 1; i < n * m; i++) {
-            if (i % n * m == 0) System.out.println();
-            else {
-                if (mines[i]) {
-                    System.out.print("*  ");
-                } else {
-                    System.out.print(nearbyMines[i] + "  ");
-                }
+        for (int i = 0; i < n; i++) {
+            for (int i2 = 0; i2 < m; i2++) {
+                if (mines[i2 * i]) System.out.print("*  ");
+                else System.out.print(nearbyMines[i2 * i] + "  ");
             }
-
-
+            System.out.println();
         }
+
     }
-
-
 }
+
+
+
