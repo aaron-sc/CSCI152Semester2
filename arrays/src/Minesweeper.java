@@ -19,6 +19,10 @@ public class Minesweeper {
         }
 
         for (int i = 0; i < mines.length; i++) {
+            System.out.println(mines[i]);
+        }
+
+        for (int i = 0; i < mines.length; i++) {
             boolean mine = mines[i];
             if (mine) {
                 if (!(i < m * 2)) {
@@ -47,13 +51,13 @@ public class Minesweeper {
 //        }
 
 
-        for (int i = 0; i < m; i++) {
-            for (int i2 = 0; i2 < n; i2++) {
-                if (mines[i2 * i]) System.out.print("*  ");
-                else System.out.print(nearbyMines[i2 * i] + "  ");
-            }
-            System.out.println();
-        }
+//        for (int i = 0; i < m; i++) {
+//            for (int i2 = 0; i2 < n; i2++) {
+//                if (mines[i2 * i]) System.out.print("*  ");
+//                else System.out.print(nearbyMines[i2 * i] + "  ");
+//            }
+//            System.out.println();
+//        }
 
     }
 }
