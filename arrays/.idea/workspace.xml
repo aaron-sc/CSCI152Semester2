@@ -64,7 +64,7 @@
     <configuration name="Minesweeper" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Minesweeper" />
       <module name="arrays" />
-      <option name="PROGRAM_PARAMETERS" value="9 9 10" />
+      <option name="PROGRAM_PARAMETERS" value="8 9 10" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>

@@ -35,9 +35,20 @@ public class Minesweeper {
             }
         }
 
+//        for (int i = 0; i < mines.length; i++) {
+//            if (i == 0) {
+//                if (mines[i + 1]) {
+//                    nearbyMines[0]++;
+//                }
+//                if (i +) {
+//
+//                }
+//            }
+//        }
 
-        for (int i = 0; i < n; i++) {
-            for (int i2 = 0; i2 < m; i2++) {
+
+        for (int i = 0; i < m; i++) {
+            for (int i2 = 0; i2 < n; i2++) {
                 if (mines[i2 * i]) System.out.print("*  ");
                 else System.out.print(nearbyMines[i2 * i] + "  ");
             }
