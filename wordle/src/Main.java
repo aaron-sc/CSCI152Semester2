@@ -37,6 +37,8 @@ public class Main {
                     StdOut.println(words[i]);
                 }
             }
+            String input = StdIn.readString();
+            StdOut.println(input);
 
 
             going = false;
