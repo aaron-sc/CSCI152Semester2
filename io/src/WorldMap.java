@@ -15,32 +15,34 @@ public class WorldMap {
                 int v = 0; // verts
                 for (int k = 0; k < 2; k++) { // read city and verts
                     String line_d = StdIn.readLine(); // read line
-                    if (k == 1 && (line_d != null)) v = Integer.parseInt(line_d); // get verts
-                    else StdOut.println(line_d + "  " + v);
+                    if (k == 1) v = Integer.parseInt(line_d); // get verts
                     if (v != 0) { // if verts != 0
+                        double[] x = new double[v];
+                        double[] y = new double[v];
                         for (int j = 0; j <= v; j++) {
-                            double[] x = new double[v];
-                            double[] y = new double[v];
-                            String coordinate = StdIn.readLine();
-                            if (!coordinate.isEmpty() && !line_d.isEmpty()) {
-                                int l = 0;
-                                if (coordinate.contains(" ")) {
-                                    l += 1;
+                            String[] coordinate = StdIn.readLine().split(" ");
+                            for (int h = 0; h < coordinate.length; h++) {
+                                String s = coordinate[h];
+                                if (!s.isEmpty()) {
+                                    double cord = Double.parseDouble(s);
+                                    if (h % 2 == 0) x[j] = cord;
+                                    else y[j] = cord;
                                 }
-                                StdOut.println(coordinate);
-                                x[j] = Double.parseDouble(coordinate.substring(l, coordinate.indexOf(" ")));
-                                y[j] = Double.parseDouble(coordinate.substring(coordinate.indexOf(" ") + 1 + l));
-//                                StdOut.println("j: " + j + ", x: " + x[j] + ", y: " + y[j]);
+
                             }
+
+
                         }
+                        // Draw
+                        StdDraw.polygon(x, y);
                     }
                 }
+
+
             }
             i++;
         }
-
     }
 
+
 }
-
-
