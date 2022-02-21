@@ -57,7 +57,7 @@
       <option name="MAIN_CLASS_NAME" value="WorldMap" />
       <module name="io" />
       <option name="REDIRECT_INPUT" value="true" />
-      <option name="INPUT_FILE" value="$PROJECT_DIR$/src/world.txt" />
+      <option name="INPUT_FILE" value="$PROJECT_DIR$/src/usa.txt" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -87,4 +87,15 @@
     </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/WorldMap.java</url>
+          <line>18</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
 </project>
