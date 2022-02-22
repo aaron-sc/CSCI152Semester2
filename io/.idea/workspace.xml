@@ -40,7 +40,7 @@
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
-  <component name="RunManager" selected="Application.WorldMap">
+  <component name="RunManager" selected="Application.ShannonEntropy">
     <configuration name="&lt;template&gt;" type="TestNG" default="true" selected="false">
       <option name="VM_PARAMETERS" value="-ea" />
       <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
@@ -49,6 +49,16 @@
       <option name="MAIN_CLASS_NAME" value="Checkerboard" />
       <module name="io" />
       <option name="PROGRAM_PARAMETERS" value="8" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ShannonEntropy" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="ShannonEntropy" />
+      <module name="io" />
+      <option name="PROGRAM_PARAMETERS" value="2" />
+      <option name="REDIRECT_INPUT" value="true" />
+      <option name="INPUT_FILE" value="$PROJECT_DIR$/src/fair-coint.txt" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -78,9 +88,11 @@
     <list>
       <item itemvalue="Application.Checkerboard" />
       <item itemvalue="Application.WorldMap" />
+      <item itemvalue="Application.ShannonEntropy" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.ShannonEntropy" />
         <item itemvalue="Application.WorldMap" />
         <item itemvalue="Application.Checkerboard" />
       </list>
