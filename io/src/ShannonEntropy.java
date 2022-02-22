@@ -7,9 +7,11 @@ public class ShannonEntropy {
         while (StdIn.hasNextLine()) { // Read next line as long as there's a next line: https://introcs.cs.princeton.edu/java/stdlib/javadoc/StdIn.html
             String[] line = StdIn.readLine().split(" ");
             for (String s : line) {
-                int n = Integer.parseInt(s);
-                buckets[n]++;
-                sum++;
+                if (!s.isEmpty()) {
+                    int n = Integer.parseInt(s);
+                    buckets[n]++;
+                    sum++;
+                }
             }
 
 
@@ -23,7 +25,7 @@ public class ShannonEntropy {
             }
         }
 
-        StdOut.printf("%.4f", shanon);
+        StdOut.printf("%.4f", shanon); // https://stackoverflow.com/questions/2538787/how-to-print-a-float-with-2-decimal-places-in-java
         StdOut.println("\n");
     }
 }
