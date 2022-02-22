@@ -29,7 +29,6 @@ public class WorldMap {
                                         x[j] = cord;
                                     } else {
                                         y[j] = cord;
-                                        StdOut.println();
                                     }
                                     p++;
 
