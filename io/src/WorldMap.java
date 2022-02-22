@@ -16,12 +16,10 @@ public class WorldMap {
                 for (int k = 0; k < 2; k++) { // read city and verts
                     String line_d = StdIn.readLine(); // read line
                     if (k == 1 && (line_d != null)) v = Integer.parseInt(line_d); // get verts
-                    else StdOut.println(line_d);
-                    
                     if (v != 0) { // if verts != 0
                         double[] x = new double[v];
                         double[] y = new double[v];
-                        for (int j = 0; j <= v; j++) {
+                        for (int j = 0; j < v; j++) {
                             String[] coordinate = StdIn.readLine().split(" ");
                             for (int h = 0, p = 0; h < coordinate.length; h++) {
                                 String s = coordinate[h];
@@ -29,10 +27,8 @@ public class WorldMap {
                                     double cord = Double.parseDouble(s);
                                     if (p % 2 == 0) {
                                         x[j] = cord;
-                                        StdOut.println("X: " + cord);
                                     } else {
                                         y[j] = cord;
-                                        StdOut.println("Y: " + cord);
                                         StdOut.println();
                                     }
                                     p++;
@@ -45,7 +41,6 @@ public class WorldMap {
 
                         }
                         // Draw
-                        StdOut.println("X len: " + x.length + " Y len: " + y.length);
                         StdDraw.polygon(x, y);
                     }
                 }
