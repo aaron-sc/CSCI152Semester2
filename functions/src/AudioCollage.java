@@ -12,7 +12,7 @@ public class AudioCollage {
     public static double[] reverse(double[] a) {
         double[] sound = new double[a.length];
         for (int i = 0; i < a.length; i++) {
-            sound[i] = a[a.length - i - 1]; // go backwards
+            sound[a.length - i - 1] = a[i]; // go backwards
         }
         return sound;
     }
@@ -20,10 +20,12 @@ public class AudioCollage {
     // Returns a new array that is the concatenation of a[] and b[].
     public static double[] merge(double[] a, double[] b) {
         double[] sound = new double[a.length + b.length];
-        for (int i = 0; i < sound.length; i++) {
-            if (i < a.length) {
-                sound[i] = a[i];
-            } else sound[i] = b[sound.length - i - 1];
+        for (int i = 0; i < a.length; i++) {
+            sound[i] = a[i];
+        }
+        for (int i = 0; i < b.length; i++) {
+            sound[i + a.length] = b[i];
+
         }
         return sound;
     }
@@ -33,14 +35,15 @@ public class AudioCollage {
     public static double[] mix(double[] a, double[] b) {
         double[] sound;
         boolean isA = a.length > b.length;
-        if (a.length > b.length) {
+        if (isA) {
             sound = new double[a.length];
         } else {
             sound = new double[b.length];
         }
         for (int i = 0; i < sound.length; i++) {
-            if (isA && i < b.length) sound[i] = a[i] + b[i];
-            else sound[i] = a[i];
+            if ((isA && i < b.length) || (!isA && i < a.length)) sound[i] = a[i] + b[i];
+            else if (isA) sound[i] = a[i];
+            else sound[i] = b[i];
         }
         return sound;
     }
@@ -59,7 +62,14 @@ public class AudioCollage {
     // See below for the requirements.
     public static void main(String[] args) {
         double[] sample1 = StdAudio.read("singer.wav");
-//        double[] sample2 = StdAudio.read("cow.wav");
-        StdAudio.play(changeSpeed(reverse(amplify(sample1, 2)), 3));
+        double[] sample2 = StdAudio.read("cow.wav");
+        double[] sample3 = StdAudio.read("harp.wav");
+        double[] sample4 = StdAudio.read("piano.wav");
+        double[] sample5 = StdAudio.read("scratch.wav");
+        StdAudio.play(merge(sample1, sample2));
+        StdAudio.play(amplify(sample2, 2));
+        StdAudio.play(reverse(sample3));
+        StdAudio.play(mix(sample4, sample5));
+        StdAudio.play(changeSpeed(sample5, 2));
     }
 }

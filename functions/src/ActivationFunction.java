@@ -25,8 +25,8 @@ public class ActivationFunction {
     // Returns the softsign function of x.
     public static double softsign(double x) {
         if (Double.isNaN(x)) return Double.NaN;
-        else if (x == Double.POSITIVE_INFINITY) return Double.POSITIVE_INFINITY;
-        else if (x == Double.NEGATIVE_INFINITY) return Double.NEGATIVE_INFINITY;
+        else if (x == Double.POSITIVE_INFINITY) return 1.0;
+        else if (x == Double.NEGATIVE_INFINITY) return -1.0;
         else return ((x) / (1 + Math.abs(x)));
     }
 
