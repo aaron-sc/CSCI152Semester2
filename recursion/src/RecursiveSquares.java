@@ -12,13 +12,18 @@ public class RecursiveSquares {
     // of the given side length.
     public static void draw(int n, double x, double y, double length) {
         if (n == 0) return;
+        draw(n - 1, x + (length / 2), y + (length / 2), length / 2);
+        draw(n - 1, x - (length / 2), y + (length / 2), length / 2);
         drawSquare(x, y, length);
-        draw(n - 1, x * 0.5, y * 0.5, length / 2);
+        draw(n - 1, x - (length / 2), y - (length / 2), length / 2);
+        draw(n - 1, x + (length / 2), y - (length / 2), length / 2);
+
     }
 
     // Takes an integer command-line argument n and draws a recursive
     // square pattern of order n, centered on (0.5, 0.5) with side length 0.5.
     public static void main(String[] args) {
-        draw(4, 0.5, 0.5, 0.5);
+        int n = Integer.parseInt(args[0]);
+        draw(n, 0.5, 0.5, 0.5);
     }
 }
