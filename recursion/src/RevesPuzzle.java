@@ -18,5 +18,6 @@ public class RevesPuzzle {
     public static void main(String[] args) {
         int n = Integer.parseInt(args[0]);
         reves(n, "A", "B", "C", "D");
+        StdOut.println();
     }
 }
