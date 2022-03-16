@@ -14,7 +14,7 @@ public class TrinomialDP {
             }
         }
 
-        return v[n][k];
+        return v[Math.abs(n)][Math.abs(k)];
     }
 
 
