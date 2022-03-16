@@ -9,10 +9,12 @@ public class RevesPuzzle {
 
     private static void reves(long n, String from, String temp1, String temp2, String to) {
         long k = (Math.round((n + 1) - (Math.sqrt((2 * n + 1)))));
-        if (n == 0) return;
-        reves(k, from, temp2, to, temp1);
+        if (n == 0) {
+            return;
+        }
+        reves(k, from, to, temp2, temp1);
         hanoi(n - k, k, from, temp2, to);
-        reves(k, temp1, temp2, from, to);
+        reves(k, temp1, from, temp2, to);
     }
 
     public static void main(String[] args) {
