@@ -16,16 +16,23 @@ public class Inversions {
         int invs = 0;
         int[] a = new int[n];
         for (int i = 0; i < a.length; i++) {
-            a[i] = n - i - 1;
-            invs +=
+            int invnum = n - i - 1;
+            if (invnum + invs <= k) {
+                a[i] = invnum;
+                invs += invnum;
+            } else {
+                a[i] = i;
+            }
+            StdOut.print(a[i] + " ");
+
         }
-        for (int i : a) StdOut.println(i);
+
     }
 
     // Takes an integer n and a long k as command-line arguments,
     // and prints a permutation of length n with exactly k inversions.
     public static void main(String[] args) {
         int[] a = new int[]{0, 1, 2, 4, 3};
-        generate(5, 5);
+        generate(10, 1);
     }
 }
