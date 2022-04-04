@@ -1,22 +1,22 @@
 public class Huntingtons {
     // Returns the maximum number of consecutive repeats of CAG in the DNA string.
     public static int maxRepeats(String dna) { // TODO: Fix this fucker
-        char[] new_dna = dna.toCharArray();
         int max = 0;
-        int CAGs = 0;
-        StdOut.println(dna);
-        for (int i = 0; i < new_dna.length; i++) {
-
-            if (new_dna.length == 1) {
-                max = 1;
-                break;
-            } else if (i != 0) {
-                if (new_dna[i - 1] == new_dna[i]) {
-                    CAGs++;
+        int total = 0;
+        int count = 0;
+        for (int i = 0; i < dna.length(); i++) {
+            if (i < dna.length() - 2) {
+                String triple = dna.substring(i, i + 3);
+                if (triple.equals("CAG")) {
+                    total++;
+                    count = 0;
+                    if (total >= max) max = total;
                 } else {
-                    CAGs = 0;
+                    if (count >= 3) {
+                        count = 0;
+                        total = 0;
+                    } else count++;
                 }
-                if (CAGs >= max) max = CAGs;
             }
         }
         return max;
@@ -38,7 +38,7 @@ public class Huntingtons {
         } else if (maxRepeats >= 36) {
             return "high risk";
         } else if (maxRepeats >= 10) {
-            return "normal";
+            return "no Huntington's";
         } else if (maxRepeats >= 0) {
             return "not human";
         }
@@ -53,5 +53,6 @@ public class Huntingtons {
         int r = maxRepeats(removeWhitespace(data));
         StdOut.println("max repeats = " + r);
         StdOut.println(diagnose(r));
+
     }
 }

@@ -34,7 +34,7 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../arrays" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
@@ -89,10 +89,10 @@
       </method>
     </configuration>
     <list>
+      <item itemvalue="Application.RightTriangle" />
       <item itemvalue="Application.GreatCircle" />
       <item itemvalue="Application.HelloGoodbye" />
       <item itemvalue="Application.HelloWorld" />
-      <item itemvalue="Application.RightTriangle" />
     </list>
     <recent_temporary>
       <list>
