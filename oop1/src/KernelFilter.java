@@ -1,4 +1,4 @@
-import java.awt.*;
+import java.awt.Color;
 
 public class KernelFilter {
 
@@ -21,12 +21,12 @@ public class KernelFilter {
                             long r = Math.round(current_color.getRed() * filter);
                             long g = Math.round(current_color.getGreen() * filter);
                             long b = Math.round(current_color.getBlue() * filter);
-                            if (r <= 0) r = 0;
-                            if (g <= 0) g = 0;
-                            if (b <= 0) b = 0;
-                            if (r >= 255) r = 255;
-                            if (g >= 255) g = 255;
-                            if (b >= 255) b = 255;
+                            if (r < 0) r = 0;
+                            if (g < 0) g = 0;
+                            if (b < 0) b = 0;
+                            if (r > 255) r = 255;
+                            if (g > 255) g = 255;
+                            if (b > 255) b = 255;
                             StdOut.println(r);
                             StdOut.println(g);
                             StdOut.println(b);

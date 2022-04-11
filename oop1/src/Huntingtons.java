@@ -38,7 +38,7 @@ public class Huntingtons {
         } else if (maxRepeats >= 36) {
             return "high risk";
         } else if (maxRepeats >= 10) {
-            return "no Huntington's";
+            return "normal";
         } else if (maxRepeats >= 0) {
             return "not human";
         }
