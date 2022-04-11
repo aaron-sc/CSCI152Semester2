@@ -4,14 +4,18 @@ public class Clock {
 
     // Creates a clock whose initial time is h hours and m minutes.
     public Clock(int h, int m) {
+        if (!((h >= 0 && h <= 23) || (m >= 0 && m <= 59))) throw new IllegalArgumentException();
         this.h = h;
         this.m = m;
     }
 
     // Creates a clock whose initial time is specified as a string, using the format HH:MM.
     public Clock(String s) {
-        this.h = Integer.parseInt(s.substring(0, s.indexOf(":"))); // Get the first number (h)
-        this.m = Integer.parseInt(s.substring(s.indexOf(":") + 1)); // Get the second number (m)
+        int h1 = Integer.parseInt(s.substring(0, s.indexOf(":"))); // Get the first number (h)
+        int m1 = Integer.parseInt(s.substring(s.indexOf(":") + 1)); // Get the second number (m)
+        if (!((h1 >= 0 && h1 <= 23) || (m1 >= 0 && m1 <= 59))) throw new IllegalArgumentException();
+        this.h = h1;
+        this.m = m1;
     }
 
     // Returns a string representation of this clock, using the format HH:MM.
@@ -26,7 +30,7 @@ public class Clock {
     public boolean isEarlierThan(Clock that) {
         int thiscombinestime = (this.h * 60) + this.m;
         int thatcombinestime = (that.h * 60) + that.m;
-        return thiscombinestime > thatcombinestime;
+        return thiscombinestime < thatcombinestime;
     }
 
     // Adds 1 minute to the time on this clock.
@@ -45,6 +49,7 @@ public class Clock {
 
     // Adds Δ minutes to the time on this clock.
     public void toc(int delta) {
+        if (delta < 0) throw new IllegalArgumentException();
         for (int i = 0; i < delta; i++) {
             tic(); // Add minutes to the clock by repeating tic
         }
@@ -53,7 +58,8 @@ public class Clock {
     // Test client (see below).
     public static void main(String[] args) {
         Clock c = new Clock("23:50");
-        c.toc(10);
+        Clock c1 = new Clock(12, 10);
+        c.toc(60);
         StdOut.println(c.toString());
     }
 }
