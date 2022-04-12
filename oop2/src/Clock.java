@@ -1,6 +1,6 @@
 public class Clock {
-    int h = 0;
-    int m = 0;
+    private int h = 0;
+    private int m = 0;
 
     // Creates a clock whose initial time is h hours and m minutes.
     public Clock(int h, int m) {
@@ -50,16 +50,24 @@ public class Clock {
     // Adds Δ minutes to the time on this clock.
     public void toc(int delta) {
         if (delta < 0) throw new IllegalArgumentException();
-        for (int i = 0; i < delta; i++) {
-            tic(); // Add minutes to the clock by repeating tic
-        }
+        int hours = delta / 60;
+
+        if (this.h == 23) {
+            this.h = 0;
+            this.h += hours;
+        } else this.h++;
+
+        for (int i = 0; i < delta % 60; i++) tic(); // Add minutes to the clock by repeating tic
+
     }
 
     // Test client (see below).
     public static void main(String[] args) {
         Clock c = new Clock("23:50");
         Clock c1 = new Clock(12, 10);
-        c.toc(60);
-        StdOut.println(c.toString());
+        c1.tic();
+        c.toc(61);
+        StdOut.println(c.isEarlierThan(c1));
+        StdOut.println(c);
     }
 }
