@@ -11,6 +11,7 @@ public class Clock {
 
     // Creates a clock whose initial time is specified as a string, using the format HH:MM.
     public Clock(String s) {
+        if (!(s.length() == 5)) throw new IllegalArgumentException();
         int h1 = Integer.parseInt(s.substring(0, s.indexOf(":"))); // Get the first number (h)
         int m1 = Integer.parseInt(s.substring(s.indexOf(":") + 1)); // Get the second number (m)
         if (!((h1 >= 0 && h1 <= 23) || (m1 >= 0 && m1 <= 59))) throw new IllegalArgumentException();
@@ -51,11 +52,8 @@ public class Clock {
     public void toc(int delta) {
         if (delta < 0) throw new IllegalArgumentException();
         int hours = delta / 60;
-
-        if (this.h == 23) {
-            this.h = 0;
-            this.h += hours;
-        } else this.h++;
+        this.h += hours;
+        this.h %= 24;
 
         for (int i = 0; i < delta % 60; i++) tic(); // Add minutes to the clock by repeating tic
 
