@@ -6,10 +6,19 @@ public class TextGenerator {
         ArrayList<String> words = new ArrayList<>();
         while (!StdIn.isEmpty()) {
             String value = StdIn.readString();
-            words.add(value);
+            words.add(value.toLowerCase());
         }
         MarkovChain markovChain = new MarkovChain(s, words);
         markovChain.generateMarkov();
-        StdOut.println(markovChain.toString());
+
+        for (int i = 0; i < words.size(); i++) {
+            String word;
+            if (markovChain.getState().isBlank()) {
+                word = markovChain.getStartingWord();
+            } else {
+                word = markovChain.next();
+            }
+            StdOut.print(word + " ");
+        }
     }
 }

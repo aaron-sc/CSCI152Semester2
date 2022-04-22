@@ -1,7 +1,8 @@
 import java.util.ArrayList;
 
 public class MarkovChain {
-    public int state;
+
+    public String state;
     public int order;
     public ArrayList<String> words;
     ST<String, ArrayList<String>> st = new ST<>();
@@ -10,32 +11,45 @@ public class MarkovChain {
     public MarkovChain(int order, ArrayList<String> words) {
         this.order = order;
         this.words = words;
+        this.state = "";
     }
 
     public void generateMarkov() {
-        for (int i = 0; i < words.size(); i++) {
-            String word = words.get(i);
+        for (String word : words) {
             if (!(st.contains(word))) {
                 st.put(word, new ArrayList<>());
-                for (int j = i; j < this.order; j++) {
-                    String s = "";
-                    s += words.get(j);
-                    st.get(word).add(s);
-                }
-            } else {
-                for (int j = i; j < this.order; j++) {
-                    String s = "";
-                    s += words.get(j);
-                    st.get(word).add(s);
-                }
             }
+            String s = "";
+            for (int j = 0; j < this.order; j++) {
+                s += words.get(j) + " ";
+
+            }
+            st.get(word).add(s);
         }
     }
+    
 
-    public String next(String state) {
-        ArrayList<String> possibleWords = st.get(state);
+    public String getState() {
+        return this.state;
+    }
+
+    public int getOrder() {
+        return this.order;
+    }
+
+    public ArrayList<String> getWords() {
+        return this.words;
+    }
+
+    public String next() {
+        ArrayList<String> possibleWords = this.st.get(this.state);
         int randomNum = StdRandom.uniform(possibleWords.size());
         return possibleWords.get(randomNum);
+    }
+
+    public String getStartingWord() {
+        int randomNum = StdRandom.uniform(this.words.size());
+        return words.get(randomNum);
     }
 
 }
