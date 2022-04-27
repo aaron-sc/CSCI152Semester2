@@ -10,14 +10,17 @@ public class TextGenerator {
         }
         MarkovChain markovChain = new MarkovChain(s, words);
         markovChain.generateMarkov();
-
+        String word = "";
         for (int i = 0; i < words.size(); i++) {
-            String word;
-            if (markovChain.getState().isBlank()) {
+
+            if (markovChain.getState() == 0) {
                 word = markovChain.getStartingWord();
             } else {
-                word = markovChain.next();
+                String[] w = word.split(" ");
+                word = w[w.length - 1];
+                word = markovChain.next(word);
             }
+            markovChain.transition();
             StdOut.print(word + " ");
         }
     }
