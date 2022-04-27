@@ -3,15 +3,16 @@ import java.util.ArrayList;
 public class TextGenerator {
     public static void main(String[] args) {
         int s = Integer.parseInt(args[0]);
+        int n = Integer.parseInt(args[1]);
         ArrayList<String> words = new ArrayList<>();
         while (!StdIn.isEmpty()) {
             String value = StdIn.readString();
             words.add(value.toLowerCase());
         }
-        MarkovChain markovChain = new MarkovChain(s, words);
+        MarkovChain markovChain = new MarkovChain(s, n, words);
         markovChain.generateMarkov();
         String word = "";
-        for (int i = 0; i < words.size(); i++) {
+        for (int i = 0; i < n; i++) {
 
             if (markovChain.getState() == 0) {
                 word = markovChain.getStartingWord();
@@ -22,6 +23,7 @@ public class TextGenerator {
             }
             markovChain.transition();
             StdOut.print(word + " ");
+            if (i % 8 == 1) StdOut.println();
         }
     }
 }

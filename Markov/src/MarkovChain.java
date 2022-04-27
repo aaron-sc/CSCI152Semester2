@@ -8,33 +8,22 @@ public class MarkovChain {
     ST<String, ArrayList<String>> st = new ST<>();
 
 
-    public MarkovChain(int order, ArrayList<String> words) {
+    public MarkovChain(int order, int n, ArrayList<String> words) {
         this.order = order;
         this.words = words;
         this.state = 0;
     }
 
     public void generateMarkov() {
-//        for (String word : words) {
-//            if (!(st.contains(word))) {
-//                st.put(word, new ArrayList<>());
-//            }
-//            String s = "";
-//            for (int j = state; j < this.order; j++) {
-//                s += words.get(j) + " ";
-//
-//            }
-//            st.get(word).add(s);
-//        }
         for (int i = 0; i < words.size(); i++) {
             String word = words.get(i);
             if (!(st.contains(word))) {
                 st.put(word, new ArrayList<>());
             }
             String s = "";
-            for (int j = i; j < this.order; j++) {
-                s += words.get(j + 1) + " ";
-
+            for (int j = 0; j < this.order; j++) {
+                if (!(i + 2 > this.words.size())) s += words.get(i + 1);
+                else s += words.get(Math.abs(i - words.size() - 1));
             }
             st.get(word).add(s);
         }
@@ -64,8 +53,11 @@ public class MarkovChain {
     }
 
     public String getStartingWord() {
-        int randomNum = StdRandom.uniform(this.words.size());
-        return words.get(randomNum);
+        int n = StdRandom.uniform(2);
+        if (n == 0) {
+            int randomNum = StdRandom.uniform(this.words.size());
+            return words.get(randomNum);
+        } else return words.get(0);
     }
 
 }
