@@ -5,7 +5,7 @@ public class TextGenerator {
         int len = Integer.parseInt(args[2]);
 
         In in = new In(fname);
-        String file = in.readAll().strip().toLowerCase();
+        String file = in.readAll().strip().toLowerCase().replace("\t", "").replace("\r", "").replace("\n", "");
         file += " " + file;
 //        file += file.substring(order);
         String[] words = file.split(" ");

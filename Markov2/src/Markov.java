@@ -8,7 +8,7 @@ public class Markov {
     private int e;
 
     public Markov(String[] words, int order) {
-
+        this.order = order;
         for (int i = 0; i < words.length; i++) {
             String sb = "";
             String w = words[i];
@@ -19,8 +19,6 @@ public class Markov {
             this.words.add(w);
         }
 
-//        addTransition();
-//        this.words.add();
     }
 
     public void addTransition(String v, String w) {

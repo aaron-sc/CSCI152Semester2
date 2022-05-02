@@ -49,7 +49,7 @@
     <configuration name="TextGenerator" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="TextGenerator" />
       <module name="Markov2" />
-      <option name="PROGRAM_PARAMETERS" value="s.txt 1 25" />
+      <option name="PROGRAM_PARAMETERS" value="test2.txt 5 25" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -83,7 +83,7 @@
         </breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/Markov.java</url>
-          <line>48</line>
+          <line>46</line>
           <option name="timeStamp" value="9" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
