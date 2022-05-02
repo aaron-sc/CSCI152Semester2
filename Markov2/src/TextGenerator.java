@@ -10,6 +10,7 @@ public class TextGenerator {
 //        file += file.substring(order);
         String[] words = file.split(" ");
 
+        StdOut.println("-----------------Translating \"" + fname + "\" with order " + order + "-----------------");
 
         Markov markovChain = new Markov(words, order);
         String s = "";
