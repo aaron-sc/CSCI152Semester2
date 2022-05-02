@@ -2,7 +2,7 @@ import java.util.ArrayList;
 
 public class MarkovChain {
 
-    public int state;
+    public String state;
     public int order;
     public ArrayList<String> words;
     ST<String, ArrayList<String>> st = new ST<>();
@@ -11,26 +11,25 @@ public class MarkovChain {
     public MarkovChain(int order, int n, ArrayList<String> words) {
         this.order = order;
         this.words = words;
-        this.state = 0;
-    }
+        this.state = "";
 
-    public void generateMarkov() {
         for (int i = 0; i < words.size(); i++) {
             String word = words.get(i);
-            if (!(st.contains(word))) {
-                st.put(word, new ArrayList<>());
-            }
             String s = "";
             for (int j = 0; j < this.order; j++) {
                 if (!(i + 2 > this.words.size())) s += words.get(i + 1);
                 else s += words.get(Math.abs(i - words.size() - 1));
             }
-            st.get(word).add(s);
+            transition(word, s);
         }
     }
 
 
-    public int getState() {
+    public void setState(String state) {
+        this.state = state;
+    }
+
+    public String getState() {
         return this.state;
     }
 
@@ -42,22 +41,32 @@ public class MarkovChain {
         return this.words;
     }
 
-    public String next(String word) {
-        ArrayList<String> possibleWords = this.st.get(word);
+    public String next(String state) {
+        ArrayList<String> possibleWords = this.st.get(state);
         int randomNum = StdRandom.uniform(possibleWords.size());
-        return possibleWords.get(randomNum);
-    }
-
-    public void transition() {
-        this.state += order;
+        String w = possibleWords.get(randomNum);
+        this.state = w;
+        return w;
     }
 
     public String getStartingWord() {
         int n = StdRandom.uniform(2);
         if (n == 0) {
             int randomNum = StdRandom.uniform(this.words.size());
-            return words.get(randomNum);
-        } else return words.get(0);
+            String w = words.get(randomNum);
+            this.state = w;
+            return w;
+        } else {
+            String w = words.get(0);
+            this.state = w;
+            return w;
+        }
+    }
+
+    public void transition(String v, String w) {
+        if (!(st.contains(v))) {
+            st.put(v, new ArrayList<>());
+        } else st.get(v).add(w);
     }
 
 }

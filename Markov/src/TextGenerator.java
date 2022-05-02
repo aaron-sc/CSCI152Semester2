@@ -10,18 +10,16 @@ public class TextGenerator {
             words.add(value.toLowerCase());
         }
         MarkovChain markovChain = new MarkovChain(s, n, words);
-        markovChain.generateMarkov();
         String word = "";
         for (int i = 0; i < n; i++) {
 
-            if (markovChain.getState() == 0) {
+            if (markovChain.getState().equals("")) {
                 word = markovChain.getStartingWord();
             } else {
                 String[] w = word.split(" ");
                 word = w[w.length - 1];
                 word = markovChain.next(word);
             }
-            markovChain.transition();
             StdOut.print(word + " ");
             if (i % 8 == 1) StdOut.println();
         }
